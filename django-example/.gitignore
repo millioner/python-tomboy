@@ -1,0 +1,17 @@
+*.kpf
+*.pyc
+*~
+*.db
+*.swp
+*.swo
+.#*
+.project
+.settings
+.pydevproject
+.ropeproject
+logs/
+local_settings.py
+.venv
+db
+.idea/
+build/

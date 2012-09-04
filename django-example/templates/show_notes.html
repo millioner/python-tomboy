@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load dict_tags %}
+
+{% block content %}
+<h1>Your tomboy notes:</h1>
+
+<p>
+    User: <b>{{ user_data|hash:'first-name' }} {{ user_data|hash:'last-name' }}</b>
+</p>
+<ul>
+    {% for note in notes|slice:":50" %}
+        <li>
+            <h3>{{ note.title }}</h3>
+            {{ note|hash:'note-content'|linebreaks }}
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
