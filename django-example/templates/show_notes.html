@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
-{% load dict_tags %}
+{% load dict_tags tomboy_tags %}
 
 {% block content %}
-<h1>Your tomboy notes:</h1>
+    <h1>Your tomboy notes:</h1>
 
-<p>
-    User: <b>{{ user_data|hash:'first-name' }} {{ user_data|hash:'last-name' }}</b>
-</p>
-<ul>
-    {% for note in notes|slice:":50" %}
-        <li>
-            <h3>{{ note.title }}</h3>
-            {{ note|hash:'note-content'|linebreaks }}
-        </li>
-    {% endfor %}
-</ul>
-
-
+    <p>
+        User: <b>{{ user_data|hash:'first-name' }} {{ user_data|hash:'last-name' }}</b>
+    </p>
+    <ul style="list-style: none;">
+        {% for note in notes|slice:":50" %}
+            <li>
+                <div style="border: solid 1px gray; margin: 10px; padding: 5px;">
+                    <h3 style="background: #DDDDDD;">{{ note.title }}</h3>
+                    <p>{{ note|hash:'note-content'|tomboy_to_html|safe }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
