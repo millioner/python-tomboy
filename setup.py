@@ -4,7 +4,7 @@ Configuration file used by setuptools. It creates 'egg', install all dependencie
 """
 
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -19,7 +19,7 @@ setup(name="python-tomboy",
     version="0.1",
     description="Tomboy integration library for Django framework",
     long_description=read('README.md'),
-    packages=('tomboy', ),
+    packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
     install_requires=install_requires,
