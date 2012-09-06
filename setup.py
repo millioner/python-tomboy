@@ -17,8 +17,8 @@ install_requires = [
 #Execute function to handle setuptools functionality
 setup(name="python-tomboy",
     version="0.1",
-    description="Tomboy integration library",
-    long_description=read('README'),
+    description="Tomboy integration library for Django framework",
+    long_description=read('README.md'),
     packages=find_packages(),
     package_dir={'': ''},
     include_package_data=True,
